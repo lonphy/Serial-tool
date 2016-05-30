@@ -17,7 +17,7 @@ void DestoryHttp() {
 int HttpReport(const char * deviceId, int ok, Counter * dst) {
 
 	if ( ServerIp == 0L ) {
-		HOSTENT* pHS = gethostbyname("test.linewin.cc");
+		HOSTENT* pHS = gethostbyname("reporturl.com");
 		if (pHS == NULL) {
 			printf("resolve hostname error\n");
 			return -1;
@@ -33,13 +33,13 @@ int HttpReport(const char * deviceId, int ok, Counter * dst) {
         return -1;
     }
 
-    //³õÊ¼»¯Á¬½ÓÓë¶Ë¿ÚºÅ
+    //åˆå§‹åŒ–è¿æ¥ä¸ç«¯å£å·
     SOCKADDR_IN addrSrv;
     addrSrv.sin_addr.S_un.S_addr = ServerIp;
     addrSrv.sin_family           = AF_INET;
     addrSrv.sin_port             = htons(80);
 
-	// Á¬½Óµ½·şÎñÆ÷
+	// è¿æ¥åˆ°æœåŠ¡å™¨
 	if (SOCKET_ERROR == connect(conn, (SOCKADDR*)&addrSrv, sizeof(SOCKADDR))) {
 		printf("connect function failed with error: %ld\n", WSAGetLastError());
         closesocket(conn);
