@@ -8,8 +8,8 @@
 static DWORD ServerIp = 0L;
 
 // www.geni4s.com
-#define HTTP_HEADER "GET /appshare/deviceBurning/addBurningLog?key=716995d8fe9c34c332da3b537dce11f6&deviceid=%s&issuccess=%d HTTP/1.0\r\n\
-Host: test.linewin.cc\r\n\
+#define HTTP_HEADER "GET /?key=val&deviceid=%s&issuccess=%d HTTP/1.0\r\n\
+Host: reporturl.com\r\n\
 Connection: close\r\n\
 Accept: application/text\r\n\
 User-Agent: l5-vc-client\r\n\r\n"
